@@ -1,0 +1,12 @@
+postgresql
+mongoDB
+mysql
+Oracle
+SqLite
+
+by the 
+
+1 pip install pymongo
+
+pip install djangorestframework
+.\venv\Scripts\activate   # if using virtualenv

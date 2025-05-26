@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Teachers and Students</title>
+</head>
+
+<body>
+
+    <h1>Teacher List</h1>
+    <ul id="teacher-list"></ul>
+
+    <h1>Student List</h1>
+    <ul id="student-list"></ul>
+
+    <script>
+        // Fetch and display teachers
+        fetch('http://127.0.0.1:8000/api/teachers/')
+            .then(res => res.json())
+            .then(data => {
+                const list = document.getElementById('teacher-list');
+                data.forEach(teacher => {
+                    const li = document.createElement('li');
+                    li.textContent = teacher.name + ' - Subject: ' + teacher.subject;
+                    list.appendChild(li);
+                });
+            });
+
+        // Fetch and display students
+        fetch('http://127.0.0.1:8000/api/students/')
+            .then(res => res.json())
+            .then(data => {
+                const list = document.getElementById('student-list');
+                data.forEach(student => {
+                    const li = document.createElement('li');
+                    li.textContent = student.name + ' (Age: ' + student.age + ', Teacher ID: ' + student.teacher + ')';
+                    list.appendChild(li);
+                });
+            });
+    </script>
+
+</body>
+
+</html>
