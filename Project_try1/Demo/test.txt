@@ -1,0 +1,9 @@
+postgresql
+mongoDB
+mysql
+Oracle
+SqLite
+
+by the 
+
+1 pip install pymongo
